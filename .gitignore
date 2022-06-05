@@ -1,0 +1,4 @@
+composer.lock
+library
+vendor/*
+config/*.ini

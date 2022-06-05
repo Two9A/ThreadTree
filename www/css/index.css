@@ -1,0 +1,254 @@
+:root {
+    --bg: #f7f6eb;
+    --head: #bccba3;
+    --item: #d0e0af;
+    --border: #5a7d5c;
+    --hilite: #185145;
+}
+body {
+    background: var(--bg);
+    color: black;
+    font: 16px/1.4 Futura, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+header {
+    background: var(--item);
+    box-shadow: 4px 4px 3px var(--head);
+    height: 100px;
+}
+#head-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#logo {
+    width: 375px;
+    height: 90px;
+    display: block;
+    background: url(/img/threadtree-head.png) no-repeat top left;
+    text-indent: -9999px;
+}
+nav {
+    line-height: 90px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+nav a {
+    color: black;
+    text-decoration: none;
+    margin-left: 16px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+article {
+    max-width: 960px;
+    overflow: auto;
+    margin: 0 auto;
+}
+article h1 {
+    margin: 1em 0;
+}
+article h2 {
+    margin: 2em 0 1em;
+}
+article a {
+    color: var(--hilite);
+    text-decoration: none;
+}
+article a:hover {
+    text-decoration: underline;
+}
+footer {
+    background: black;
+    color: var(--bg);
+}
+footer a {
+    color: var(--bg);
+}
+#foot-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 0;
+}
+
+.tweet-list {
+    list-style: none inside;
+    padding: 0 0 0 24px;
+    margin: 24px 0;
+    position: relative;
+}
+.tweet-list-top {
+    padding-left: 0;
+}
+.tweet-list li {
+    background: var(--item);
+    box-shadow: 4px 4px 3px var(--head);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0;
+    position: relative;
+    overflow: hidden;
+    min-width: 560px;
+}
+.tweet-list li span.expando {
+    font-size: 32px;
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    cursor: pointer;
+}
+.home-unrolls .tweet-list li span.expando {
+    display: none;
+}
+.tweet-list li span.expando::before {
+    content: '\2013';
+}
+.tweet-list li + ul {
+    height: auto;
+}
+.tweet-list li.collapsed {
+    margin-bottom: 0;
+}
+.tweet-list li.collapsed + ul {
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+}
+.tweet-list li.collapsed span.expando::before {
+    content: '+';
+}
+.tweet-head {
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+}
+.tweet-avatar {
+    margin-right: 16px;
+}
+.tweet-avatar img {
+    border-radius: 16px;
+    height: 48px;
+}
+.tweet-author {
+    height: 48px;
+    line-height: 48px;
+}
+.tweet-author-name {
+    font-size: 1.4em;
+    margin-right: 8px;
+}
+.tweet-author-username {
+    margin-right: 8px;
+}
+.tweet-count {
+    padding-left: 64px;
+}
+.tweet-body {
+    margin-top: 16px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    font-size: 1.25em;
+    min-width: 300px;
+    white-space: pre-wrap;
+}
+
+.home-tweet {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: all;
+    text-indent: -9999px;
+}
+
+#new-tree {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+#new-tree-content {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#new-tree-error {
+    border: 3px solid #c30;
+    padding: 16px;
+    color: #c30;
+    display: none;
+    margin-bottom: 8px;
+}
+#new-tree-error.shown {
+    display: block;
+}
+#new-tree-url {
+    flex-grow: 1;
+    margin-right: 16px;
+    padding: 0 16px;
+    font: 20px/1.4 Futura, sans-serif;
+}
+#new-tree-submit {
+    background: var(--hilite);
+    color: white;
+    border-width: 0;
+    padding: 16px;
+    font: 20px/1.4 Futura, sans-serif;
+}
+#new-tree-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#new-tree-overlay.hidden {
+    display: none;
+}
+#new-tree-overlay p {
+    font-size: 28px;
+}
+
+@media only screen and (max-device-width: 600px) {
+    article {
+        padding: 32px;
+    }
+    .tweet-list {
+        margin-left: 32px;
+    }
+    .tweet-list-top {
+        margin-left: 0;
+    }
+    .tweet-list li {
+        margin: 32px 0;
+        padding: 32px;
+    }
+    .tweet-head, .tweet-author {
+        min-height: 72px;
+        height: auto;
+    }
+    .tweet-author-name {
+        font-size: 40px;
+        display: block;
+    }
+    .tweet-author-username {
+        font-size: 28px;
+    }
+    .tweet-avatar img {
+        height: 84px;
+        width: 84px;
+    }
+}

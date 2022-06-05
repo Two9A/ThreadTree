@@ -1,0 +1,8 @@
+{
+    "require": {
+        "abraham/twitteroauth": "^4.0",
+        "cboden/ratchet": "^0.4",
+        "ratchet/pawl": "^0.4.1",
+        "paragi/php-websocket-client": "^1.0"
+    }
+}

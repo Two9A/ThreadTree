@@ -1,0 +1,16 @@
+api_key = "<API key>"
+api_secret = "<API secret>"
+api_token = "<API token>"
+user_key = "<User key>"
+user_secret = "<User secret>"
+user_name = "<Twitter username>"
+user_id = <Twitter user ID>
+app_name = "Thread Tree"
+root_url = "https://threadtree.xyz"
+root_dir = "/var/www/threadtree.xyz"
+debug = 1
+db_dsn = "mysql:host=localhost;dbname=threadtree"
+db_user = "<Database user>"
+db_pass = "<Database password>"
+ws_port = <Internal websocket port>
+ws_uri = "<External websocket URI>"
