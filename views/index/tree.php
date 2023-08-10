@@ -19,7 +19,7 @@ function render_tree($tree, $tweet_data) {
 <?php
 $root = current($this->tweets['data']);
 ?>
-<h2>Thread by @<?= $root['username'] ?>, <?= count($this->tweets['data']) ?> tweets</h2>
+<h2>Thread by @<?= $root['username'] ?>, <?= count($this->tweets['data']) ?> toots</h2>
 <ul class="tweet-list tweet-list-top">
 <?
 render_tree($this->tweets['tree'], $this->tweets['data']);

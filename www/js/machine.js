@@ -13,18 +13,26 @@ TreeMachine = (cb) => {
                 };
             },
             register: (payload) => {
-                if (!payload.id) {
-                    throw new Error('Register expects an id');
+                if (payload.hasOwnProperty('url')) {
+                    machine.log('Registering: ' + payload.url);
+                    machine.store['url'] = payload.url;
+                    return {
+                        FETCH_INIT: 'fetch_started',
+                    };
+                } else if (payload.hasOwnProperty('id')) {
+                    machine.log('Registering: ' + payload.id);
+                    machine.store['id'] = payload.id;
+                    return {
+                        FETCH_INIT: 'fetch_started',
+                    };
+                } else {
+                    throw new Error('Register expects an id or url');
                 }
-                machine.log('Registering: ' + payload.id);
-                machine.store['id'] = payload.id;
-                return {
-                    FETCH_INIT: 'fetch_started',
-                };
             },
             fetch_started: (payload) => {
                 return {
                     FETCH_LIST: 'list_fetched',
+                    FETCH_CONTEXT: 'context_fetched',
                 };
             },
             list_fetched: (payload) => {

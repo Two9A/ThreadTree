@@ -26,6 +26,7 @@ gtag('js', new Date()); gtag('config', 'G-Y8SVBSRQBQ');
   <header>
    <div id="head-content">
     <a href="https://threadtree.xyz/" id="logo">Thread Tree</a>
+    <!--
     <nav>
      <?php if (isset($loggedin)) { ?>
      <a href="/user/account">Account</a>
@@ -34,6 +35,7 @@ gtag('js', new Date()); gtag('config', 'G-Y8SVBSRQBQ');
      <a href="/user/login">Login</a>
      <?php } ?>
     </nav>
+    -->
    </div>
   </header>
   <article>
@@ -41,7 +43,7 @@ gtag('js', new Date()); gtag('config', 'G-Y8SVBSRQBQ');
   </article>
   <footer>
    <div id="foot-content">
-    <a href="https://threadtree.xyz/">Thread Tree</a> by <a href="https://imrannazar.com/">Imran Nazar</a>, <a href="https://twitter.com/_inazar">@_inazar</a>, 2022. <a href="https://pixabay.com/illustrations/tree-plant-nature-spring-forest-1035173/">Tree illustration</a> by <a href="https://pixabay.com/users/catkin-127770/">Catkin</a>.
+    <a href="https://threadtree.xyz/">Thread Tree</a> by <a href="https://imrannazar.com/">Imran Nazar</a>, <a href="https://hachyderm.io/@Two9A">@Two9A@hachyderm.io</a>, 2022-23. <a href="https://pixabay.com/illustrations/tree-plant-nature-spring-forest-1035173/">Tree illustration</a> by <a href="https://pixabay.com/users/catkin-127770/">Catkin</a>.
    </div>
   </footer>
  </body>
